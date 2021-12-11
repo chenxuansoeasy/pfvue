@@ -25,62 +25,40 @@
       <el-button
       size="small"
       style="float: right; margin-top: 6px; margin-right: 6px"
-      >导出图</el-button
-    >
-    <el-button
+      >DFS</el-button
+      >
+      <el-button
       size="small"
       style="float: right; margin-top: 6px; margin-right: 6px"
-      >导出图片</el-button
-    >
-    <el-button
+      >Head To Tail</el-button
+      >
+      <el-button
       size="small"
       style="float: right; margin-top: 6px; margin-right: 6px"
-      >查看流程图</el-button
-    >
-    <el-dialog title="查看流程图" width="60%"> </el-dialog>
+      @click="saveJson"
+      >Save</el-button
+      >
+      <el-upload
+        style="float: right; margin-top: 6px; margin-right: 6px"
+        action=""
+        :on-change="beforeUpload">
+        <el-button size="small" type="primary">load</el-button>
+      </el-upload>
+      <el-button
+        size="small"
+        style="float: right; margin-top: 6px; margin-right: 6px"
+        @click="center"
+      >AutoLayout</el-button>
     </div>
   </div>
 </template>
 <script>
-
+import {exportJSON} from '../../utils/pfUtils'
 export default {
   beforeCreate () {
-    this.showAttrConfigInit = false;
-    this.$store.showAttrConfig = this.showAttrConfigInit;
+
   },
-  data() {
-    return {
-      showAttrConfig: false,
-      nodeFrmData: {},
-      initScale: 1,
-      viewTranslate: { graphX: 0, graphY: 0 },
-      list: [
-        {
-          name: "节点2",
-          icon: "节点2",
-          classStr: "outer",
-          nodeType: "2",
-        },
-        {
-          name: "节点1",
-          icon: "节点1",
-          nodeType: "1",
-        },
-        {
-          name: "节点3",
-          icon: "节点3",
-          classStr: "circular",
-          nodeType: "3",
-        },
-        {
-          name: "节点4",
-          icon: "节点4",
-          classStr: "circular",
-          nodeType: "6",
-        },
-      ],
-    };
-  },
+
   beforeDestroy() {},
   mounted() {
     // let graph = this.$store.graphX6;
@@ -99,7 +77,14 @@ export default {
   },
   methods: {
     delNode() {
-      this.$store.graphX6.deleteCells();
+      let cells = this.$store.graphX6.getSelectedCells();
+
+      cells.forEach((item) =>{
+        if(item.isNode()) {
+
+        }
+      })
+      this.$store.graphX6.removeCells(cells);
       this.showAttrConfig = false;
     },
     undo() {
@@ -112,21 +97,38 @@ export default {
       debugger
       this.$store.graphX6.history.redo();
     },
-
-
-
-
+    saveJson() {
+      exportJSON(this.$store.graphX6)
+    },
+    center() {
+      this.$store.graphX6.centerContent()
+    },
+    beforeUpload(file) {
+      let reader = new FileReader();
+      debugger
+      reader.readAsText(file.raw);
+      reader.onload = (e) => {
+        // 读取文件内容
+        const cont = e.target.result
+        console.log(cont)
+        this.$store.graphX6.fromJSON(JSON.parse(cont))
+        // 接下来可对文件内容进行处理
+      }
+    },
   },
+
+
+
+
 };
 </script>
 <style lang="scss" >
 .tool-bar {
   height: 60px;
-  width: 600px;
+  width: 100%;
   position: fixed;
   top: 10px;
-  left: 20%;
-  transform: translateX(-50%);
+
   display: flex;
   justify-content: space-evenly;
   border: 1px solid #555555;
@@ -134,9 +136,9 @@ export default {
   .manager {
     float: left;
     display: flex;
-    top: 10px;
-    left: 10%;
-    transform: translateX(-50%);
+    top: 30px;
+    left: 5%;
+
     position: fixed;
     i {
       font-size: 18px;

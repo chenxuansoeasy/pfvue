@@ -1,5 +1,6 @@
-import {Graph, Node, ObjectExt} from '@antv/x6'
+import  {Graph, Node, ObjectExt} from '@antv/x6'
 import {createShape} from '@antv/x6/es/shape/basic/util'
+import {Rect} from '@antv/x6/es/shape/basic'
 
 export const Machine = createShape('machine', {
   width: 100,
@@ -51,8 +52,13 @@ export const Machine = createShape('machine', {
       fill: '#333333',
       textAnchor: 'start',
       textVerticalAnchor: 'middle',
-      refX: '35%',
-      refY: '50%'
+      ensureLegibility: true,
+      refX: '25%',
+      refY: '50%',
+      position: {
+        ensureLegibility: true,
+      }
+
     },
     propHooks (metadata) {
       const {label, ...others} = metadata
@@ -79,7 +85,7 @@ export const DesignDomain = createShape('designDomain', {
     {
       tagName: 'text',
       selector: 'label',
-    },
+    }
   ],
   attrs: {
     body: {
@@ -98,15 +104,15 @@ export const DesignDomain = createShape('designDomain', {
       strokeWidth: 2,
     },
     label: {
-      fontSize: 14,
+      fontSize: 12,
       fill: '#333333',
       textAnchor: 'start',
       textVerticalAnchor: 'middle',
-      refX: '35%',
+      refX: '15%',
       refY: '50%'
     },
     propHooks (metadata) {
-      const {label, ...others} = metadata
+      const {label,label2, ...others} = metadata
       if (label) {
         ObjectExt.setByPath(others, 'attrs/text/text', label)
       }
@@ -132,7 +138,7 @@ export const Requirement = createShape('requirement', {
       ry: 30,
       cx: 45,
       cy: 30,
-      strokeDasharray: "5,5",
+      strokeDasharray: '5,5',
       strokeWidth: 1.5,
       stroke: '#000000',
     },
@@ -170,8 +176,12 @@ export const GivenDomain = createShape('givenDomain', {
     },
     {
       tagName: 'text',
-      selector: 'label',
+      selector: 'text',
     },
+    {
+      tagName: 'text',
+      selector: 'label2',
+    }
   ],
   attrs: {
     body: {
@@ -197,7 +207,7 @@ export const GivenDomain = createShape('givenDomain', {
       stroke: '#0a0a0a',
       strokeWidth: 2,
     },
-    label: {
+    label2: {
       fontSize: 10,
       fill: '#000000',
       textAnchor: 'start',
@@ -205,10 +215,18 @@ export const GivenDomain = createShape('givenDomain', {
       refX: '92%',
       refY: '92%'
     },
+    text: {
+      fontSize: 14,
+      fill: '#000000',
+      textAnchor: 'middle',
+      textVerticalAnchor: 'middle',
+    },
     propHooks (metadata) {
-      const {label, ...others} = metadata
-      if (label) {
-        ObjectExt.setByPath(others, 'attrs/text/text', label)
+      const {label,label2,...others} = metadata
+      if (label2) {
+        ObjectExt.setByPath(others, 'attrs/text/text', label2,'/')
+      } else if (text) {
+        ObjectExt.setByPath(others, 'attrs/name/text', text,'/')
       }
       return others
     },
@@ -254,40 +272,81 @@ export const Entity = createShape('entity', {
   },
 })
 
-export const pfComponents = {
-  machine: {
-    name: 'machine',
-    type: 'html',
-    width: 100,
-    height: 80,
-    attrs: {
-      rect: {fill: '#31D0C6', stroke: '#4B4A67', strokeWidth: 6},
-      text: {text: 'rect', fill: 'white'},
+export class Domain1 extends Rect {
+  constructor (metaData) {
+    super()
+  }
+  width= 90
+  height= 60
+  markup = [
+    {
+      tagName: 'rect',
+      selector: 'body',
     },
-  },
-  requirement: {
-    width: 70,
-    height: 40,
-    attrs: {
-      rect: {fill: '#31D0C6', stroke: '#4B4A67', strokeWidth: 6},
-      text: {text: 'rect', fill: 'white'},
+    {
+      tagName: 'text',
+      selector: 'label',
     },
-  },
-  design: {
-    width: 70,
-    height: 40,
-    attrs: {
-      rect: {fill: '#31D0C6', stroke: '#4B4A67', strokeWidth: 6},
-      text: {text: 'rect', fill: 'white'},
+  ]
+  attrs={
+    body: {
+      fill: '#ffffff',
+      stroke: '#333333',
+      strokeWidth: 2,
     },
-  },
-  givenDomain: {
-    width: 70,
-    height: 40,
-    attrs: {
-      rect: {fill: '#31D0C6', stroke: '#4B4A67', strokeWidth: 6},
-      text: {text: 'rect', fill: 'white'},
+    label: {
+      fontSize: 14,
+      fill: '#333333',
+      refX: '50%',
+      refY: '50%',
+      textAnchor: 'middle',
+      textVerticalAnchor: 'middle',
     },
   }
+  propHooks (metadata) {
+    const {label, ...others} = metadata
+    if (label) {
+      ObjectExt.setByPath(others, 'attrs/text/text', label)
+    }
+    return others
+  }
+
 }
+Graph.registerNode('domain1',Domain1)
+// export const pfComponents = {
+//   machine: {
+//     name: 'machine',
+//     type: 'html',
+//     width: 100,
+//     height: 80,
+//     attrs: {
+//       rect: {fill: '#31D0C6', stroke: '#4B4A67', strokeWidth: 6},
+//       text: {text: 'rect', fill: 'white'},
+//     },
+//   },
+//   requirement: {
+//     width: 70,
+//     height: 40,
+//     attrs: {
+//       rect: {fill: '#31D0C6', stroke: '#4B4A67', strokeWidth: 6},
+//       text: {text: 'rect', fill: 'white'},
+//     },
+//   },
+//   design: {
+//     width: 70,
+//     height: 40,
+//     attrs: {
+//       rect: {fill: '#31D0C6', stroke: '#4B4A67', strokeWidth: 6},
+//       text: {text: 'rect', fill: 'white'},
+//     },
+//   },
+//   givenDomain: {
+//     width: 70,
+//     height: 40,
+//     attrs: {
+//       rect: {fill: '#31D0C6', stroke: '#4B4A67', strokeWidth: 6},
+//       text: {text: 'rect', fill: 'white'},
+//     },
+//   }
+// }
 

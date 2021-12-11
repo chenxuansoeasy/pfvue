@@ -15,10 +15,23 @@ Vue.use(Vuex)
 const graph = new Vuex.Store({
   state: {
     count: 0,
+    // x6 图对象
     graphX6: {},
-    graphInfo: {},
+    // x6 图对象信息  id:data
+    graphInfo: {
+      nodeList: {
+        id: {
+          attr: {
+          }
+        }
+      }
+    },
+    // graph.history 实现撤销重做操作
     undoManager: {},
-    showAttrConfig: false
+    // 某一属性框显示
+    showAttrConfig: false,
+    // 当前节点
+    currentNode: {}
   },
   mutations: {
     increment (state) {
