@@ -139,6 +139,40 @@
           <el-button type="primary" @click="causalConfirm">确定</el-button>
         </span>
     </model>
+    <div>
+      <el-dialog
+        title="Head To Tail"
+        :visible.sync="headToTail"
+        width="40%"
+        :modal-append-to-body=false
+        :before-close="handleClose">
+        <div style="display: flex">
+        <div class="block"><el-select v-model="head" placeholder="请选择" filterable>
+          <el-option
+            v-for="item in nodes"
+            :key="item.value"
+            :label="item.name"
+            :value="item.value">
+          </el-option>
+        </el-select></div>
+          <div class="block">
+        <el-select v-model="end" placeholder="请选择"
+                   filterable>
+          <el-option
+            v-for="item in nodes"
+            :key="item.value"
+            :label="item.name"
+            :value="item.value">
+          </el-option>
+        </el-select>
+          </div>
+        </div>
+        <span slot="footer" class="dialog-footer">
+    <el-button @click="$parent.headToTail=false">取 消</el-button>
+    <el-button type="primary" @click="findHeadToTail">确 定</el-button>
+      </span>
+      </el-dialog>
+    </div>
   </div>
 </template>
 <script>
@@ -150,12 +184,32 @@ import {DesignDomain, GivenDomain, Machine, Requirement} from '../model/pf'
 
 let time = null
 export default {
+  props:['headToTail','nodes'],
   data () {
     return {
       showNodeConfig: false,
       showCausalConfig: false,
       showEdgeConfig: false,
       ifDesignDomain: false,
+      headAndTail: false,
+      head:"",
+      end:"",
+      options: [{
+        value: '选项1',
+        label: '黄金糕'
+      }, {
+        value: '选项2',
+        label: '双皮奶'
+      }, {
+        value: '选项3',
+        label: '蚵仔煎'
+      }, {
+        value: '选项4',
+        label: '龙须面'
+      }, {
+        value: '选项5',
+        label: '北京烤鸭'
+      }],
       nodeFrmData: {
         relation: [],
       },
@@ -351,6 +405,9 @@ export default {
 
   },
   methods: {
+    findHeadToTail () {
+      this.$parent.headToTail=false
+    },
     addCausal () {
       let conflict = false
       debugger
@@ -606,6 +663,7 @@ export default {
       this.property = property
       this.propertyDel()
       this.property = ''
+      this.$parent.headToTail=false
     },
 
     showInput () {
@@ -651,10 +709,17 @@ export default {
 
 .app-content {
   flex: 1;
-  width: 1000px;
-  height: 520px;
+  width: 1600px;
+  height: 600px;
   margin-left: 8px;
   margin-right: 8px;
   box-shadow: 0 0 10px 1px #e9e9e9;
+}
+.block {
+  padding: 30px 0;
+  text-align: center;
+  border-right: 1px solid #eff2f6;
+  width: 50%;
+  box-sizing: border-box;
 }
 </style>

@@ -37,11 +37,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.model-enter-active,
-.model-leave-active {
-  transition: all 0.6s;
-  transform: translateX(110%);
-}
+
 .model-enter-to {
   transform: translateX(0);
 }

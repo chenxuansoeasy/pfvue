@@ -1,9 +1,7 @@
 <template>
   <div class="pf">
-    <toolbar-panel></toolbar-panel>
-
-    <editor></editor>
-
+    <toolbar-panel  @showHeadToTail="showHeadToTail($event)"></toolbar-panel>
+    <editor :headToTail="headToTail" :nodes="nodes"></editor>
   </div>
 </template>
 <script>
@@ -21,11 +19,24 @@ export default {
   },
   data() {
     return {
+      headToTail:false,
+      nodes:[]
     }
-
   },
   methods: {
-
+    showHeadToTail(e){
+      debugger
+      console.log("true")
+      this.headToTail=e
+      let graph = this.$store.graphX6.getNodes()
+      this.nodes = []
+      graph.forEach(node => {
+        this.nodes.push({
+         value: node.id,
+          name: node.label
+        })
+      })
+    }
   }
 };
 </script>
