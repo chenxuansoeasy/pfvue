@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2023-05-05T06:20:44.263Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36 Edg/111.0.1661.44" etag="xxWk7elE1WlivCo4rSnh" version="21.2.9" type="github">
+<mxfile host="app.diagrams.net" modified="2023-05-05T06:24:50.114Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36 Edg/111.0.1661.44" etag="zPedfF6e6wCSS9V67BRx" version="21.2.9" type="github">
   <diagram id="R2lEEEUBdFMjLlhIrx00" name="Page-1">
     <mxGraphModel dx="1505" dy="829" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0" extFonts="Permanent Marker^https://fonts.googleapis.com/css?family=Permanent+Marker">
       <root>
@@ -7,7 +7,7 @@
         <mxCell id="xvkgQrIf-qjmkDvSw3I_-27" style="edgeStyle=orthogonalEdgeStyle;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.75;exitDx=0;exitDy=0;entryX=0;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="xvkgQrIf-qjmkDvSw3I_-1" target="xvkgQrIf-qjmkDvSw3I_-6">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="xvkgQrIf-qjmkDvSw3I_-37" value="制定飞行计划" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="xvkgQrIf-qjmkDvSw3I_-27">
+        <mxCell id="xvkgQrIf-qjmkDvSw3I_-37" value="制定&lt;br&gt;计划" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="xvkgQrIf-qjmkDvSw3I_-27">
           <mxGeometry x="-0.3025" y="-12" relative="1" as="geometry">
             <mxPoint as="offset" />
           </mxGeometry>
@@ -18,7 +18,7 @@
         <mxCell id="xvkgQrIf-qjmkDvSw3I_-32" style="edgeStyle=orthogonalEdgeStyle;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.25;exitDx=0;exitDy=0;entryX=0;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="xvkgQrIf-qjmkDvSw3I_-3" target="xvkgQrIf-qjmkDvSw3I_-6">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="xvkgQrIf-qjmkDvSw3I_-38" value="上报运行状态" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="xvkgQrIf-qjmkDvSw3I_-32">
+        <mxCell id="xvkgQrIf-qjmkDvSw3I_-38" value="上报状态" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="xvkgQrIf-qjmkDvSw3I_-32">
           <mxGeometry x="-0.2871" y="15" relative="1" as="geometry">
             <mxPoint as="offset" />
           </mxGeometry>
@@ -26,30 +26,24 @@
         <mxCell id="xvkgQrIf-qjmkDvSw3I_-3" value="无人机" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="120" y="540" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="xvkgQrIf-qjmkDvSw3I_-34" style="edgeStyle=orthogonalEdgeStyle;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.25;exitDx=0;exitDy=0;entryX=1;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="xvkgQrIf-qjmkDvSw3I_-4" target="xvkgQrIf-qjmkDvSw3I_-6">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
         <mxCell id="xvkgQrIf-qjmkDvSw3I_-4" value="数据中心" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="520" y="540" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="xvkgQrIf-qjmkDvSw3I_-30" style="edgeStyle=orthogonalEdgeStyle;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.75;exitDx=0;exitDy=0;entryX=1;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="xvkgQrIf-qjmkDvSw3I_-5" target="xvkgQrIf-qjmkDvSw3I_-6">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="xvkgQrIf-qjmkDvSw3I_-39" value="指派无人机完成飞行任务&lt;br&gt;修改飞行任务状态&lt;br&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="xvkgQrIf-qjmkDvSw3I_-30">
+        <mxCell id="xvkgQrIf-qjmkDvSw3I_-39" value="分配任务&lt;br&gt;修改状态" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="xvkgQrIf-qjmkDvSw3I_-30">
           <mxGeometry x="-0.1845" y="12" relative="1" as="geometry">
-            <mxPoint y="23" as="offset" />
+            <mxPoint x="-13" y="13" as="offset" />
           </mxGeometry>
         </mxCell>
         <mxCell id="xvkgQrIf-qjmkDvSw3I_-5" value="操作员" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="510" y="280" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="xvkgQrIf-qjmkDvSw3I_-29" style="edgeStyle=orthogonalEdgeStyle;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0;exitDx=0;exitDy=0;entryX=0.25;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="xvkgQrIf-qjmkDvSw3I_-6" target="xvkgQrIf-qjmkDvSw3I_-5">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
         <mxCell id="xvkgQrIf-qjmkDvSw3I_-31" style="edgeStyle=orthogonalEdgeStyle;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=1;exitDx=0;exitDy=0;entryX=0.75;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="xvkgQrIf-qjmkDvSw3I_-6" target="xvkgQrIf-qjmkDvSw3I_-3">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="xvkgQrIf-qjmkDvSw3I_-36" value="发送飞行计划&lt;br&gt;控制起飞降落" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="xvkgQrIf-qjmkDvSw3I_-31">
+        <mxCell id="xvkgQrIf-qjmkDvSw3I_-36" value="发送计划&lt;br&gt;控制起飞降落" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="xvkgQrIf-qjmkDvSw3I_-31">
           <mxGeometry x="-0.0711" y="9" relative="1" as="geometry">
             <mxPoint as="offset" />
           </mxGeometry>
@@ -57,7 +51,7 @@
         <mxCell id="xvkgQrIf-qjmkDvSw3I_-33" style="edgeStyle=orthogonalEdgeStyle;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=1;exitDx=0;exitDy=0;entryX=0.25;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="xvkgQrIf-qjmkDvSw3I_-6" target="xvkgQrIf-qjmkDvSw3I_-4">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="xvkgQrIf-qjmkDvSw3I_-40" value="无人机位置信息" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="xvkgQrIf-qjmkDvSw3I_-33">
+        <mxCell id="xvkgQrIf-qjmkDvSw3I_-40" value="飞行数据" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="xvkgQrIf-qjmkDvSw3I_-33">
           <mxGeometry x="-0.2887" y="-9" relative="1" as="geometry">
             <mxPoint as="offset" />
           </mxGeometry>
