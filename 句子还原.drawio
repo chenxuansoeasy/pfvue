@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2024-03-23T01:58:47.733Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36 Edg/118.0.2088.76" etag="rAoCsiiN1g0Pk8tKVB_d" version="24.0.7" type="github">
+<mxfile host="app.diagrams.net" modified="2024-03-23T03:36:55.185Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36 Edg/118.0.2088.76" etag="MFKsISsQqGFAC1z_tZ4H" version="24.0.7" type="github">
   <diagram name="第 1 页" id="AXDuTPOKBofO2-NumYbh">
     <mxGraphModel dx="1173" dy="738" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -16,11 +16,11 @@
         <mxCell id="61OYUtFmyXOMqLUHNU4D-4" value="处理后" style="text;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
           <mxGeometry x="170" y="408" width="60" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="61OYUtFmyXOMqLUHNU4D-5" value="The System must be able to display several entity simultaneously." style="text;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
-          <mxGeometry x="205" y="435" width="370" height="30" as="geometry" />
+        <mxCell id="61OYUtFmyXOMqLUHNU4D-5" value="The System must be able to display several entity simultaneously." style="text;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry x="166" y="435" width="460" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="61OYUtFmyXOMqLUHNU4D-6" value="The System must be able to display several entities (cases, suspects) simultaneously." style="text;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
-          <mxGeometry x="200" y="380" width="480" height="30" as="geometry" />
+        <mxCell id="61OYUtFmyXOMqLUHNU4D-6" value="The System must be able to display several entities (cases, suspects) simultaneously." style="text;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry x="169" y="381" width="590" height="30" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
